@@ -1,3 +1,9 @@
+require("dotenv").config()
+
+const {
+  api: { projectId, dataset },
+} = requireConfig("../studio/sanity.json")
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -16,10 +22,8 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "ioa60rsr",
-        dataset: "production",
-        // a token with read permissions is required
-        // if you have a private dataset
+        projectId,
+        dataset,
         token: process.env.MY_SANITY_TOKEN,
       },
     },
@@ -37,8 +41,21 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
+}
+
+function requireConfig(path) {
+  try {
+    return require(path)
+  } catch (e) {
+    console.error(
+      "Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js"
+    )
+    return {
+      api: {
+        projectId: process.env.SANITY_PROJECT_ID || "",
+        dataset: process.env.SANITY_DATASET || "",
+      },
+    }
+  }
 }
