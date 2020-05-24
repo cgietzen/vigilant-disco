@@ -6,6 +6,7 @@ import category from './category'
 import figure from './figure'
 import mainImage from './mainImage'
 import post from './post'
+import project from './project'
 import slideshow from './slideshow'
 
 export default createSchema({
@@ -16,6 +17,7 @@ export default createSchema({
     figure,
     mainImage,
     post,
+    project,
     slideshow
   ])
 })
