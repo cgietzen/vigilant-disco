@@ -8,6 +8,7 @@ import mainImage from './mainImage'
 import post from './post'
 import project from './project'
 import slideshow from './slideshow'
+import service from './service'
 
 export default createSchema({
   name: 'default',
@@ -18,6 +19,7 @@ export default createSchema({
     mainImage,
     post,
     project,
+    service,
     slideshow
   ])
 })

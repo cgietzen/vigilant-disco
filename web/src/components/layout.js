@@ -16,7 +16,7 @@ const Layout = ({ children, onHideNav, onShowNav, siteTitle, showNav }) => (
       onShowNav={onShowNav}
       showNav={showNav}
     />
-    <div>{children}</div>
+    <main>{children}</main>
     <footer>
       <div>
         © {new Date().getFullYear()}, Built with{" "}

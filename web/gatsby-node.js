@@ -6,6 +6,10 @@ const { format } = require("date-fns")
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+/**
+ * Generates Blog Posts
+ */
+
 async function createBlogPostPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
@@ -43,6 +47,10 @@ async function createBlogPostPages(graphql, actions, reporter) {
   })
 }
 
+/**
+ * Generates Project Pages
+ */
+
 async function createProjectPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
@@ -78,7 +86,47 @@ async function createProjectPages(graphql, actions, reporter) {
   })
 }
 
+/**
+ * Generates Service Pages
+ */
+
+async function createServicePages(graphql, actions, reporter) {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      allSanityService(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const serviceEdges = (result.data.allSanityService || {}).edges || {}
+
+  serviceEdges.forEach((edge, index) => {
+    const { id, slug = {} } = edge.node
+    const path = `/services/${slug.current}`
+
+    reporter.info(`Creating service page: ${path}...`)
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/service.js"),
+      context: { id },
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPages(graphql, actions, reporter)
   await createProjectPages(graphql, actions, reporter)
+  await createServicePages(graphql, actions, reporter)
 }

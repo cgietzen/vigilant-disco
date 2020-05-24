@@ -24,10 +24,23 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          Agency
         </Link>
       </h1>
     </div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/work">Work</Link>
+        </li>
+        <li>
+          <Link to="/services">Service</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
+      </ul>
+    </nav>
   </header>
 )
 
