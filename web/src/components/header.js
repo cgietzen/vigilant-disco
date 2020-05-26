@@ -1,43 +1,56 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import HeaderLogo from "./header-logo"
 
 const Header = ({ siteTitle }) => (
   <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+    sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+    <div>
+      <h1>
         <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            color: "black",
+            fontSize: [5],
+            textDecoration: "none",
+            width: "50px",
+            height: "50px",
+            borderRadius: "50% 50%",
+            border: "1px dotted black",
           }}
+          to="/"
         >
-          Agency
+          C
         </Link>
       </h1>
     </div>
-    <nav>
-      <ul>
+    <nav
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <ul sx={{ display: "flex" }}>
         <li>
-          <Link to="/work">Work</Link>
+          <Link variant="nav" to="/work">
+            Work
+          </Link>
         </li>
         <li>
-          <Link to="/services">Service</Link>
+          <Link variant="nav" to="/services">
+            Services
+          </Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link variant="nav" to="/blog">
+            Blog
+          </Link>
         </li>
       </ul>
     </nav>

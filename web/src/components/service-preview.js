@@ -6,7 +6,7 @@ import { imageUrlFor } from "../lib/image-url"
 
 function ServicePreview(props) {
   return (
-    <Link to={`/service/${props.slug.current}`}>
+    <Link to={`/services/${props.slug.current}`}>
       <div>
         {props.mainImage && props.mainImage.asset && (
           <img

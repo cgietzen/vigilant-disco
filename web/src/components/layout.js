@@ -7,25 +7,24 @@
 
 import React from "react"
 import Header from "./header.js"
+import Footer from "./footer.js"
+import styles from "modern-css-reset/dist/reset.min.css"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 
 const Layout = ({ children, onHideNav, onShowNav, siteTitle, showNav }) => (
-  <>
+  <div sx={{ bg: "white", p: "3" }}>
     <Header
       siteTitle={siteTitle}
       onHideNav={onHideNav}
       onShowNav={onShowNav}
       showNav={showNav}
     />
-    <main>{children}</main>
-    <footer>
-      <div>
-        © {new Date().getFullYear()}, Built with{" "}
-        <a href="https://www.sanity.io">Sanity</a> &amp;
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </div>
-    </footer>
-  </>
+    <main sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      {children}
+    </main>
+    <Footer />
+  </div>
 )
 
 export default Layout
