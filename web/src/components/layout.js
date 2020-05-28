@@ -5,26 +5,30 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Header from "./header.js"
 import Footer from "./footer.js"
 import styles from "modern-css-reset/dist/reset.min.css"
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const Layout = ({ children, onHideNav, onShowNav, siteTitle, showNav }) => (
-  <div sx={{ bg: "white", p: "3" }}>
-    <Header
-      siteTitle={siteTitle}
-      onHideNav={onHideNav}
-      onShowNav={onShowNav}
-      showNav={showNav}
-    />
-    <main sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-      {children}
-    </main>
-    <Footer />
-  </div>
-)
+function Layout({ children, siteTitle }) {
+  return (
+    <div sx={{ bg: "white", px: "3" }}>
+      <Header siteTitle={siteTitle} />
+      <main
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          marginTop: [5],
+        }}
+      >
+        {children}
+      </main>
+      <Footer />
+    </div>
+  )
+}
 
 export default Layout

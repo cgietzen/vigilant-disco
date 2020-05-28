@@ -1,61 +1,68 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, MenuButton } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from "react"
 import HeaderLogo from "./header-logo"
+import Menu from "./Menu"
 
-const Header = ({ siteTitle }) => (
-  <header
-    sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
-  >
-    <div>
-      <h1>
-        <Link
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            color: "black",
-            fontSize: [5],
-            textDecoration: "none",
-            width: "50px",
-            height: "50px",
-            borderRadius: "50% 50%",
-            border: "1px dotted black",
-          }}
-          to="/"
-        >
-          C
-        </Link>
-      </h1>
-    </div>
-    <nav
+function Header(siteTitle) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const onToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  return (
+    <header
       sx={{
+        position: "fixed",
+        top: "0",
+        left: "0",
+        right: "0",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        border: "1px dotted black",
+        p: [1, null, null],
       }}
     >
-      <ul sx={{ display: "flex" }}>
-        <li>
-          <Link variant="nav" to="/work">
-            Work
+      <div>
+        <h1>
+          <Link
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: "black",
+              fontSize: [5],
+              textDecoration: "none",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50% 50%",
+              border: "1px dotted black",
+            }}
+            to="/"
+          >
+            C
           </Link>
-        </li>
-        <li>
-          <Link variant="nav" to="/services">
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link variant="nav" to="/blog">
-            Blog
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  </header>
-)
+        </h1>
+      </div>
+      <div className="menuWrap">
+        <MenuButton
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen)
+            if (isMenuOpen === false) {
+              alert("menu is not open")
+            } else {
+              alert("menu is open")
+            }
+          }}
+        />
+        <Menu isMenuOpen={isMenuOpen} />
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
