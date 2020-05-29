@@ -1,6 +1,8 @@
 # gatsby-sanity-agency
 
-A fictional agency site based off of real one.
+A fictional agency site.
 
-Experimenting with Gatsby and Sanity.
+Built to experiment with Gatsby, Sanity, CSS-in-JS.
+
+Bootstrapped with the Gatsby starter blog and one of the Sanity starters.
 
