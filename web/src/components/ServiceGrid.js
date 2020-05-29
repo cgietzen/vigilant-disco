@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import ServicePreview from "./service-preview"
+import ServicePreview from "./servicepreview"
 
 function ServiceGrid(props) {
   return (

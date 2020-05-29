@@ -21,6 +21,15 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Oakes Grotesk Medium"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId,
@@ -36,7 +45,7 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        display: `minimal-ui`,
+        display: ``,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },

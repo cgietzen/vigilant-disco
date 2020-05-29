@@ -7,10 +7,12 @@ export default props => (
   <Link
     {...props}
     sx={{
-      fontSize: "2",
+      fontFamily: "heading",
+      fontSize: "7",
       color: "white",
       textDecoration: "none",
       lineHeight: 1.125,
+      py: "1",
     }}
   />
 )

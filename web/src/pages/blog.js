@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { mapEdgesToNodes } from "../lib/helpers"
-import BlogGrid from "../components/blog-grid"
+import BlogGrid from "../components/bloggrid"
 import Container from "../components/container"
-import GraphQLErrorList from "../components/graphql-error-list"
+import GraphQLErrorList from "../components/GraphqlErrorList"
 import SEO from "../components/seo"
 import Layout from "../containers/layout"
 

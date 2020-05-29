@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Container from "../components/container"
-import GraphQlErrorList from "../components/graphql-error-list"
-import ServiceComponent from "../components/service-component"
+import GraphQlErrorList from "../components/GraphqlErrorList"
+import ServiceComponent from "../components/ServiceComponent"
 import SEO from "../components/seo"
 import Layout from "../containers/layout"
 

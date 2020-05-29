@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { mapEdgesToNodes } from "../lib/helpers"
-import GraphQLErrorList from "../components/graphql-error-list"
+import GraphQLErrorList from "../components/GraphqlErrorList"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/container"
-import ServiceGrid from "../components/service-grid"
+import ServiceGrid from "../components/ServiceGrid"
 
 export const query = graphql`
   query ServicePageQuery {

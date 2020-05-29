@@ -2,11 +2,11 @@ import { Link } from "gatsby"
 import React from "react"
 import { buildImageObj, cn, getBlogUrl } from "../lib/helpers"
 import { imageUrlFor } from "../lib/image-url"
-import BlockText from "../components/block-text"
+import BlockText from "./blocktext"
 
-function BlogPostPreview(props) {
+function ProjectPostPreview(props) {
   return (
-    <Link to={`/blog/${props.slug.current}`}>
+    <Link to={`/work/${props.slug.current}`}>
       <div>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -28,4 +28,4 @@ function BlogPostPreview(props) {
   )
 }
 
-export default BlogPostPreview
+export default ProjectPostPreview

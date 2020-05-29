@@ -1,17 +1,18 @@
 /** @jsx jsx */
-import { jsx, MenuButton } from "theme-ui"
+import { jsx, MenuButton, Close } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import HeaderLogo from "./header-logo"
+import { useSpring } from "react-spring"
 import Menu from "./Menu"
 
 function Header(siteTitle) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const onToggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const isMenuOpenTransition = useSpring({
+    transform: isMenuOpen ? `translateY(0)` : `translateY(-100%)`,
+    opacity: isMenuOpen ? 1 : 0,
+  })
 
   return (
     <header
@@ -23,8 +24,7 @@ function Header(siteTitle) {
         display: "flex",
         justifyContent: "space-between",
         width: "100%",
-        border: "1px dotted black",
-        p: [1, null, null],
+        p: [3, null, null],
       }}
     >
       <div>
@@ -36,10 +36,10 @@ function Header(siteTitle) {
               color: "black",
               fontSize: [5],
               textDecoration: "none",
-              width: "50px",
-              height: "50px",
+              width: "46px",
+              height: "46px",
               borderRadius: "50% 50%",
-              border: "1px dotted black",
+              border: "1px solid black",
             }}
             to="/"
           >
@@ -51,14 +51,33 @@ function Header(siteTitle) {
         <MenuButton
           onClick={() => {
             setIsMenuOpen(!isMenuOpen)
-            if (isMenuOpen === false) {
-              alert("menu is not open")
-            } else {
-              alert("menu is open")
-            }
+          }}
+          sx={{
+            display: `${isMenuOpen ? "none" : "flex"}`,
+            height: "46px",
+            width: "46px",
+            zIndex: "105",
+            color: "black",
+            backgroundColor: "white",
+            borderRadius: "50%",
           }}
         />
-        <Menu isMenuOpen={isMenuOpen} />
+        <Close
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen)
+          }}
+          sx={{
+            display: `${isMenuOpen ? "flex" : "none"}`,
+            position: "relative",
+            height: "46px",
+            width: "46px",
+            zIndex: "105",
+            color: "black",
+            backgroundColor: "white",
+            borderRadius: "50%",
+          }}
+        />
+        <Menu isMenuOpen={isMenuOpen} style={isMenuOpenTransition} />
       </div>
     </header>
   )

@@ -1,15 +1,18 @@
 /** @jsx jsx */
 import { jsx, Box } from "theme-ui"
 import React from "react"
+import ReactDOM from "react-dom"
 import HeaderLink from "./HeaderLink"
+import { animated } from "react-spring"
 
-const Menu = props => {
+const Menu = ({ isMenuOpen, style }) => {
   return (
-    <Box
+    <animated.div
+      style={style}
       sx={{
-        display: `${props.isMenuOpen ? "flex" : "none"}`,
+        display: `${isMenuOpen ? "block" : "none"}`,
         fontSize: "2",
-        backgroundColor: "black",
+        bg: "#171819",
         textDecoration: "none",
         lineHeight: "1.125",
         height: "100vh",
@@ -38,7 +41,7 @@ const Menu = props => {
         <HeaderLink to="/blog">Blog</HeaderLink>
         <HeaderLink to="/services">Contact</HeaderLink>
       </nav>
-    </Box>
+    </animated.div>
   )
 }
 

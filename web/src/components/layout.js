@@ -4,24 +4,23 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React, { useState, useEffect } from "react"
 import Header from "./header.js"
 import Footer from "./footer.js"
 import styles from "modern-css-reset/dist/reset.min.css"
-/** @jsx jsx */
-import { jsx } from "theme-ui"
 
 function Layout({ children, siteTitle }) {
   return (
-    <div sx={{ bg: "white", px: "3" }}>
+    <div sx={{ bg: "#171819", px: "3" }}>
       <Header siteTitle={siteTitle} />
       <main
         sx={{
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-          marginTop: [5],
+          marginTop: [6],
         }}
       >
         {children}

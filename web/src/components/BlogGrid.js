@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
-import ProjectPostPreview from "./project-post-preview"
+import BlogPostPreview from "./blogpostpreview"
 
-function ProjectGrid(props) {
+function BlogGrid(props) {
   return (
     <div>
       {props.title && <h2>{props.title}</h2>}
@@ -11,7 +11,7 @@ function ProjectGrid(props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              <ProjectPostPreview {...node} />
+              <BlogPostPreview {...node} />
             </li>
           ))}
       </ul>
@@ -19,4 +19,4 @@ function ProjectGrid(props) {
   )
 }
 
-export default ProjectGrid
+export default BlogGrid

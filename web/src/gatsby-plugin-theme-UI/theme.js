@@ -6,12 +6,12 @@ export const theme = {
   },
   fonts: {
     body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "Georgia, serif",
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading: '"Oakes Grotesk Medium", serif',
     monospace: "Menlo, monospace",
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontSizes: [11, 13, 16, 20, 26, 33, 48, 64],
+  fontSizes: [11, 13, 16, 20, 26, 33, 48, 60, 64],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -41,9 +41,10 @@ export const theme = {
   styles: {
     root: {
       // uses the theme values provided above
-      fontFamily: "body",
+      fontFamily: "heading",
       fontWeight: "body",
-      backgroundColor: "white",
+      bg: "black",
+      color: "white",
     },
   },
 }
