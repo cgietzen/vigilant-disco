@@ -10,9 +10,9 @@ const Menu = ({ isMenuOpen, style }) => {
     <animated.div
       style={style}
       sx={{
-        display: `${isMenuOpen ? "block" : "none"}`,
+        // display: `${isMenuOpen ? "block" : "block"}`,
         fontSize: "2",
-        bg: "#171819",
+        bg: "text",
         textDecoration: "none",
         lineHeight: "1.125",
         height: "100vh",
@@ -30,8 +30,8 @@ const Menu = ({ isMenuOpen, style }) => {
           flexDirection: "column",
           justifyContent: "center",
           textAlign: "right",
-          paddingRight: [4],
-          paddingTop: [5],
+          pr: [4, null, null],
+          pt: [6],
         }}
       >
         <HeaderLink to="/work">Work</HeaderLink>

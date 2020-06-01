@@ -17,14 +17,15 @@ function Header(siteTitle) {
   return (
     <header
       sx={{
-        position: "fixed",
+        position: "sticky",
         top: "0",
         left: "0",
         right: "0",
         display: "flex",
         justifyContent: "space-between",
         width: "100%",
-        p: [3, null, null],
+        bg: "transparent",
+        p: [4, null, null],
       }}
     >
       <div>
@@ -34,7 +35,7 @@ function Header(siteTitle) {
               display: "flex",
               justifyContent: "center",
               color: "black",
-              fontSize: [5],
+              fontSize: [4],
               textDecoration: "none",
               width: "46px",
               height: "46px",
@@ -57,9 +58,10 @@ function Header(siteTitle) {
             height: "46px",
             width: "46px",
             zIndex: "105",
-            color: "black",
+            color: "background",
             backgroundColor: "white",
             borderRadius: "50%",
+            border: "1px solid background",
           }}
         />
         <Close
@@ -72,9 +74,10 @@ function Header(siteTitle) {
             height: "46px",
             width: "46px",
             zIndex: "105",
-            color: "black",
+            color: "background",
             backgroundColor: "white",
             borderRadius: "50%",
+            border: "1px solid background",
           }}
         />
         <Menu isMenuOpen={isMenuOpen} style={isMenuOpenTransition} />

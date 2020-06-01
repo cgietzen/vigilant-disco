@@ -7,7 +7,7 @@ export default props => (
   <Link
     {...props}
     sx={{
-      fontSize: "5",
+      fontSize: "4",
       color: "black",
       textDecoration: "none",
       lineHeight: 1.125,

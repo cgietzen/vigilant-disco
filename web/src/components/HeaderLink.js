@@ -8,8 +8,8 @@ export default props => (
     {...props}
     sx={{
       fontFamily: "heading",
-      fontSize: "7",
-      color: "white",
+      fontSize: "5",
+      color: "background",
       textDecoration: "none",
       lineHeight: 1.125,
       py: "1",

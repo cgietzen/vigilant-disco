@@ -11,22 +11,13 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-theme-ui`,
+    "gatsby-plugin-theme-ui",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        custom: {
-          families: ["Oakes Grotesk Medium"],
-          urls: ["/fonts/fonts.css"],
-        },
       },
     },
     {

@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "OakesLight";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("./fonts/oakes-grotesk-light") format("woff");
+}
+
+@font-face {
+  font-family: "OakesMedium";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./fonts/oakes-grotesk-medium") format("woff");
+}
+
+@font-face {
+  font-family: "OakesRegular";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./fonts/oakes-grotesk-regular") format("woff");
+}
+
+@font-face {
+  font-family: "OakesSemiBold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./fonts/oakes-grotesk-semibold") format("woff");
+}
+
+body {
+  font-family: "OakesLight", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+}

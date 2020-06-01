@@ -7,7 +7,7 @@ import FooterLink from "./FooterLink"
 
 const Footer = ({ siteTitle }) => {
   return (
-    <footer>
+    <footer sx={{ p: "4" }}>
       <nav
         sx={{
           display: "flex",
