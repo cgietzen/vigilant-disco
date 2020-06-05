@@ -1,5 +1,4 @@
 const theme = {
-  useBodyStyles: false,
   borders: ["1px"],
   borderStyles: ["solid", "dashed"],
   borderWidths: [1, 4],
@@ -15,8 +14,8 @@ const theme = {
     darken: "#F7F7F7",
   },
   fonts: {
-    body: "Menlo, system-ui, sans-serif",
-    heading: "Menlo, system-ui, sans-serif",
+    body: "system-ui, sans-serif",
+    heading: "system-ui, sans-serif",
     monospace: "Menlo, monospace",
   },
   fontSizes: [
@@ -30,14 +29,14 @@ const theme = {
     "6rem",
   ],
   fontWeights: {
-    body: 400,
+    body: 300,
     heading: 700,
     bold: 700,
   },
   letterSpacings: ["-.125", "0", "0.125", "0.25"],
   lineHeights: {
     heading: 1,
-    body: 1.5,
+    body: 1.25,
   },
   radii: [],
   shadows: [
@@ -50,18 +49,20 @@ const theme = {
   sizes: {
     container: 1140,
   },
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 24, 32, 40, 56, 64],
   zIndices: [],
-  breakpoints: [],
+  breakpoints: ["40em", "56em", "64em"],
   styles: {
     root: {
       fontSize: 1,
       fontFamily: "body",
       lineHeight: "body",
+      fontWeight: 100,
     },
     p: {
       color: "text",
       lineHeight: "body",
+      fontWeight: 100,
       code: {
         backgroundColor: "darken",
         color: "text",
@@ -77,7 +78,7 @@ const theme = {
     h1: {
       color: "text",
       fontSize: 7,
-      fontWeight: "heading",
+      fontWeight: "body",
       lineHeight: "heading",
       marginTop: 0,
       marginBottom: 5,
@@ -88,7 +89,7 @@ const theme = {
     h2: {
       color: "text",
       fontSize: 6,
-      fontWeight: "heading",
+      fontWeight: "body",
       lineHeight: "heading",
       marginTop: 0,
       marginBottom: 4,
@@ -99,7 +100,7 @@ const theme = {
     h3: {
       color: "text",
       fontSize: 5,
-      fontWeight: "heading",
+      fontWeight: "body",
       lineHeight: "heading",
       marginTop: 0,
       marginBottom: 3,
@@ -162,6 +163,8 @@ const theme = {
     li: {
       color: "text",
       lineHeight: "body",
+      fontFamily: "body",
+      fontWeight: "body",
     },
     blockquote: {
       borderLeftColor: "primary",

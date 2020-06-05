@@ -9,7 +9,6 @@ import { jsx } from "theme-ui"
 import Header from "./header.js"
 import Footer from "./footer.js"
 import styles from "modern-css-reset/dist/reset.min.css"
-// import "../typography/typography.css"
 
 function Layout({ children, siteTitle }) {
   return (
@@ -20,7 +19,6 @@ function Layout({ children, siteTitle }) {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-          p: "4",
         }}
       >
         {children}

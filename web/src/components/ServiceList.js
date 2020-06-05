@@ -4,11 +4,12 @@ import { Link } from "gatsby"
 import React from "react"
 
 function ServiceList(props) {
-  console.log(props)
   return (
-    <section>
-      <Heading as="h2">Our Services</Heading>
-      <ul sx={{ p: "0", display: "flex", flexWrap: "wrap" }}>
+    <section sx={{ px: [4], mb: [7] }}>
+      <Heading as="h2" sx={{ pb: [3], fontSize: [1] }}>
+        Our Services
+      </Heading>
+      <ul sx={{ display: "flex", flexWrap: "wrap" }}>
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
@@ -17,7 +18,7 @@ function ServiceList(props) {
                 sx={{
                   textDecoration: "none",
                   listStyleType: "none",
-                  color: "background",
+                  color: "text",
                   pr: [2],
                   fontSize: [3, null, null],
                   letterSpacing: "-.05rem",

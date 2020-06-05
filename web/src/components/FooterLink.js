@@ -8,9 +8,9 @@ export default props => (
     {...props}
     sx={{
       fontSize: "4",
-      color: "black",
       textDecoration: "none",
       lineHeight: 1.125,
+      color: "text",
     }}
   />
 )

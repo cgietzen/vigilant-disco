@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Box } from "theme-ui"
 import { Link } from "gatsby"
 import React from "react"
 import { buildImageObj, cn, getBlogUrl } from "../lib/helpers"
@@ -6,7 +8,10 @@ import BlockText from "./blocktext"
 
 function ProjectPostPreview(props) {
   return (
-    <Link to={`/work/${props.slug.current}`}>
+    <Link
+      to={`/work/${props.slug.current}`}
+      sx={{ textDecoration: "none", color: "text" }}
+    >
       <div>
         {props.mainImage && props.mainImage.asset && (
           <img
@@ -18,12 +23,14 @@ function ProjectPostPreview(props) {
           />
         )}
       </div>
-      <h3>{props.title}</h3>
-      {props._rawExcerpt && (
-        <div>
-          <BlockText blocks={props._rawExcerpt} />
-        </div>
-      )}
+      <Box sx={{ pt: [5], px: [6], color: "body" }}>
+        <h3>{props.title}</h3>
+        {props._rawExcerpt && (
+          <div>
+            <BlockText blocks={props._rawExcerpt} />
+          </div>
+        )}
+      </Box>
     </Link>
   )
 }
