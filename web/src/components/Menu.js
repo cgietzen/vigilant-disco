@@ -31,7 +31,7 @@ const Menu = ({ isMenuOpen, style }) => {
           justifyContent: "center",
           textAlign: "right",
           pr: [4, null, null],
-          pt: [6],
+          pt: "5rem",
         }}
       >
         <HeaderLink to="/work">Work</HeaderLink>

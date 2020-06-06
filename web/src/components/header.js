@@ -33,18 +33,21 @@ function Header(siteTitle) {
           <Link
             sx={{
               display: "flex",
+              flexDirection: "column",
+              fontWeight: 300,
               justifyContent: "center",
-              color: "black",
+              alignItems: "center",
+              color: "white",
               fontSize: [4],
               textDecoration: "none",
               width: "46px",
               height: "46px",
               borderRadius: "50% 50%",
-              border: "1px solid black",
+              border: "1px solid white",
             }}
             to="/"
           >
-            C
+            <span>C</span>
           </Link>
         </h1>
       </div>
@@ -77,7 +80,8 @@ function Header(siteTitle) {
             color: "background",
             backgroundColor: "white",
             borderRadius: "50%",
-            border: "1px solid background",
+            border: "1px solid black",
+            textDecoration: "none",
           }}
         />
         <Menu isMenuOpen={isMenuOpen} style={isMenuOpenTransition} />

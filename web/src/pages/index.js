@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Heading } from "theme-ui"
 import React from "react"
 import { graphql } from "gatsby"
 import { mapEdgesToNodes } from "../lib/helpers"
@@ -5,8 +7,10 @@ import GraphQLErrorList from "../components/GraphqlErrorList"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import IndexHero from "../components/IndexHero"
 import ProjectGrid from "../components/ProjectGrid"
 import ServiceList from "../components/ServiceList"
+import { BsArrowDownRight } from "react-icons/bs"
 
 export const query = graphql`
   query ProjectsForIndexQuery {
@@ -66,9 +70,29 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+      <IndexHero />
+      <Heading
+        as="h2"
+        sx={{
+          position: "relative",
+          width: "8.65ch",
+          fontSize: [4],
+          fontWeight: "body",
+          pl: "4",
+          mb: [7],
+        }}
+      >
+        Featured
+        <br /> Work
+        <BsArrowDownRight
+          sx={{
+            position: "absolute",
+            bottom: "2px",
+            right: "0",
+            fontSize: "1em",
+          }}
+        />
+      </Heading>
       {projectNodes && projectNodes.length > 0 && (
         <ProjectGrid nodes={projectNodes} />
       )}

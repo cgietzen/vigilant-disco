@@ -5,10 +5,7 @@ const theme = {
   colors: {
     text: "#ffffff",
     background: "#171819",
-    primary: "#34D058",
-    secondary: "#0366D6",
-    muted: "#CCCCCC",
-    highlight: "#BBFFCD",
+    highlight: "#ffef00",
     gray: "#808080",
     accent: "#cee5ff",
     darken: "#F7F7F7",
@@ -26,14 +23,15 @@ const theme = {
     "2.125rem",
     "3rem",
     "3.5rem",
+    "4 rem",
     "6rem",
   ],
   fontWeights: {
     body: 300,
-    heading: 700,
+    heading: 300,
     bold: 700,
   },
-  letterSpacings: ["-.125", "0", "0.125", "0.25"],
+  letterSpacings: ["-.1", "0", "0.125", "0.25"],
   lineHeights: {
     heading: 1,
     body: 1.25,
@@ -57,7 +55,7 @@ const theme = {
       fontSize: 1,
       fontFamily: "body",
       lineHeight: "body",
-      fontWeight: 100,
+      fontWeight: 300,
     },
     p: {
       color: "text",
@@ -101,7 +99,7 @@ const theme = {
       color: "text",
       fontSize: 5,
       fontWeight: "body",
-      lineHeight: "heading",
+      lineHeight: "body",
       marginTop: 0,
       marginBottom: 3,
       a: {
@@ -111,8 +109,8 @@ const theme = {
     h4: {
       color: "text",
       fontSize: 4,
-      fontWeight: "heading",
-      lineHeight: "heading",
+      fontWeight: "body",
+      lineHeight: "body",
       marginTop: 0,
       marginBottom: 3,
       a: {
@@ -133,7 +131,7 @@ const theme = {
     h6: {
       color: "text",
       fontSize: 2,
-      fontWeight: "heading",
+      fontWeight: "body",
       lineHeight: "heading",
       marginTop: 0,
       marginBottom: 3,

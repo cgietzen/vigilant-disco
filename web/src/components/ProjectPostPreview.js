@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from "theme-ui"
+import { jsx, Box, Heading } from "theme-ui"
 import { Link } from "gatsby"
 import React from "react"
 import { buildImageObj, cn, getBlogUrl } from "../lib/helpers"
@@ -24,9 +24,11 @@ function ProjectPostPreview(props) {
         )}
       </div>
       <Box sx={{ pt: [5], px: [6], color: "body" }}>
-        <h3>{props.title}</h3>
+        <Heading as="h3" sx={{ fontSize: [3], fontWeight: "body", mb: [3] }}>
+          {props.title}
+        </Heading>
         {props._rawExcerpt && (
-          <div>
+          <div sx={{ fontSize: [4], letterSpacing: [0] }}>
             <BlockText blocks={props._rawExcerpt} />
           </div>
         )}

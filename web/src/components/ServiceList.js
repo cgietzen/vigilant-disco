@@ -6,7 +6,7 @@ import React from "react"
 function ServiceList(props) {
   return (
     <section sx={{ px: [4], mb: [7] }}>
-      <Heading as="h2" sx={{ pb: [3], fontSize: [1] }}>
+      <Heading as="h2" sx={{ pb: [3], fontSize: [1], fontWeight: "body" }}>
         Our Services
       </Heading>
       <ul sx={{ display: "flex", flexWrap: "wrap" }}>
